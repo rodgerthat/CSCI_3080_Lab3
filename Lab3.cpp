@@ -135,8 +135,8 @@ void evalPostfix() {
 	}
 }
 
-// operateOnArrays
 // accepts a char that indicates the logic operations we want to preform. 
+// performs said logical operation between the two working arrays,
 // then assigns the result back into A.
 void operateOnArrays( char logicOperator ) {
 
@@ -174,7 +174,8 @@ void operateOnArrays( char logicOperator ) {
 }
 
 
-// loadArray function to handle assigning P, Q hardcoded arrays to whichever working array
+// loadArray function to handle moving arrays around based on a char input
+// this would be MUCH MUCH easier w/ pointers. . . 
 void loadArray( char c, bool *Z ) {
 	
 	switch ( c ) {
@@ -206,7 +207,7 @@ void evalAB() {
 	}
 }
 
-// check the C array for all true values
+// check the C array for all true values, thus determining equivalence
 bool checkC() {
 	for ( int i=0; i<boolArraySize; i++ ) {
 		if ( !C[i] ) return false; 
@@ -214,13 +215,15 @@ bool checkC() {
 	return true;
 }
 
-// negateArray function, does just that, negates all the values in the array
+// does just that, negates all the values in the array
 void negateArray( bool *A ) {
 
 	for ( int i=0; i<boolArraySize; i++ ) A[i] = !A[i];
 
 }
 
+// print out the working arrays in table form, human readable
+// as opposed to 1 and 0
 void printArrays() {
 	
 	cout << "first\tsecond\tequivalence" << endl;
@@ -235,8 +238,5 @@ void printArrays() {
 
 		if ( C[i] ) cout << "T\t" << endl;
 		else cout << "F\t" << endl;
-
 	}
-
-
 }
