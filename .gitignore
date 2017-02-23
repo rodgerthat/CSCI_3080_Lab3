@@ -1,0 +1,7 @@
+# ignore everything
+*
+
+#except this fellah
+!.gitignore
+!Lab3.cpp
+
